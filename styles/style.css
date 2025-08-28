@@ -318,7 +318,7 @@ main {
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 375px) {
   .hero__title {
     font-size: var(--hero-subtitle);
   }
