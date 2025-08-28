@@ -83,33 +83,32 @@ main {
   aspect-ratio: 1/1;
 }
 
-
 .img-cinematic {
-  filter: hue-rotate(-10deg) saturate(1.4); 
+  filter: hue-rotate(-10deg) saturate(1.4);
 }
 
 .img-dramatic {
-  filter: contrast(1.5) brightness(0.8); 
+  filter: contrast(1.5) brightness(0.8);
 }
 .img-mystic {
   filter: hue-rotate(180deg) brightness(0.8) contrast(1.2) blur(0.5px);
 }
 .img-lofi {
-  filter: brightness(0.9) saturate(0.8) blur(1px); 
+  filter: brightness(0.9) saturate(0.8) blur(1px);
 }
 .img-bright-multi {
-  filter: brightness(1.2) contrast(1.3) saturate(1.5) sepia(0.2) drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+  filter: brightness(1.2) contrast(1.3) saturate(1.5) sepia(0.2)
+    drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 .img-vintage {
-  filter: sepia(0.8); 
+  filter: sepia(0.8);
 }
 .img-melancholy {
-  filter: grayscale(0.7) contrast(0.9); 
+  filter: grayscale(0.7) contrast(0.9);
 }
 .img-sunny {
   filter: brightness(1.3) saturate(1.2);
 }
-
 
 .card__cover {
   position: relative;
@@ -318,7 +317,7 @@ main {
     transition: none;
   }
 }
- 
+
 @media (max-width: 768px) {
   .hero__title {
     font-size: var(--hero-subtitle);
@@ -331,4 +330,4 @@ main {
   .save__button {
     flex-direction: column;
   }
-} 
+}
