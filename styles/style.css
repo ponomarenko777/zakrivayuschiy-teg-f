@@ -9,8 +9,326 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
 .page {
+  display: grid;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--color);
+  font-family: var(--font-base), sans-serif;
+  font-variation-settings: "wght" var(--wght);
+  font-size: var(--font-size);
+  background-image: var(--cover);
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: var(--page-bg-color);
+  padding-block-start: 100px;
 }
+
+.header {
+  display: grid;
+  width: 100%;
+}
+
+.welcome {
+  border: 2px solid var(--contour-color);
+  background-color: var(--page-bg-color);
+  max-inline-size: 696px;
+  margin: 0 auto;
+}
+
+.title__decor {
+  display: block;
+  font-family: var(--font-accent), fantasy;
+  font-size: var(--hero-title);
+  margin-block-start: clamp(122px, calc(0.00751 * 100vw + 119.18px), 130px);
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 20px;
+  text-align: center;
+}
+
+.hero__title {
+  display: grid;
+  max-inline-size: 696px;
+  width: 100%;
+  font-size: var(--hero-subtitle);
+  text-align: center;
+  align-content: center;
+  font-family: var(--font-accent), fantasy;
+  text-transform: uppercase;
+  margin-block-end: clamp(122px, calc(0.00751 * 100vw + 119.18px), 130px);
+}
+
+main {
+  display: grid;
+  margin-block-start: 98px;
+  margin-block-end: 105px;
+  gap: 50px;
+}
+
+.card {
+  display: grid;
+  max-inline-size: 696px;
+  background-color: var(--page-bg-color);
+  border: 2px solid var(--border-color);
+  margin-inline: auto;
+}
+
+.card__cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}
+
+
+.img-cinematic {
+  filter: hue-rotate(-10deg) saturate(1.4); 
+}
+
+.img-dramatic {
+  filter: contrast(1.5) brightness(0.8); 
+}
+.img-mystic {
+  filter: hue-rotate(180deg) brightness(0.8) contrast(1.2) blur(0.5px);
+}
+.img-lofi {
+  filter: brightness(0.9) saturate(0.8) blur(1px); 
+}
+.img-bright-multi {
+  filter: brightness(1.2) contrast(1.3) saturate(1.5) sepia(0.2) drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+}
+.img-vintage {
+  filter: sepia(0.8); 
+}
+.img-melancholy {
+  filter: grayscale(0.7) contrast(0.9); 
+}
+.img-sunny {
+  filter: brightness(1.3) saturate(1.2);
+}
+
+
+.card__cover {
+  position: relative;
+}
+
+.card__title {
+  font-variation-settings: "wght" var(--card-title-wght);
+  padding: 5px 10px;
+  font-family: var(--font-base), sans-serif;
+  font-size: var(--font-size);
+  border-block-end: 2px solid var(--border-color);
+}
+
+.card__watermark {
+  position: absolute;
+  mix-blend-mode: hard-light;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-accent), fantasy;
+  text-shadow: -1px 0 var(--page-bg-color), 1px 0 var(--page-bg-color),
+    0 -1px var(--page-bg-color), 0 1px var(--page-bg-color);
+  font-size: 14px;
+  color: var(--color);
+  opacity: 0.5;
+}
+
+.card__details {
+  display: grid;
+  font-family: var(--font-base), sans-serif;
+  border-block-start: 2px solid var(--border-color);
+  padding: 25px;
+  gap: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card__paragraph {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.like-icon:active {
+  animation: heartBeat 0.5s ease-in-out infinite;
+}
+
+.card__icon-button {
+  display: flex;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--color);
+  cursor: pointer;
+  margin: 0;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--border-color, #000000);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color, #000000);
+}
+
+.card__button {
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid var(--border-color);
+  background: var(--button-text-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--button-fill-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.button .button__text {
+  transition: color 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.card__like-button {
+  width: 130px;
+  min-height: 38px;
+}
+
+.button__text {
+  font-size: var(--button-size);
+  color: var(--button-text-color);
+  font-family: var(--font-accent), fantasy;
+  mix-blend-mode: difference;
+}
+
+.button:hover .button__text {
+  color: var(--button-text-color);
+}
+
+.button svg {
+  stroke: white;
+  mix-blend-mode: difference;
+}
+
+.button:hover svg {
+  color: var(--button-text-color);
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+}
+
+.save__button {
+  min-height: 55px;
+  gap: 8px;
+  padding: 15px 20px;
+}
+
+.dialog[open] {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw * (352 / 1440));
+  min-width: 341px;
+  padding: 30px;
+  position: fixed;
+  background-color: var(--page-bg-color);
+  border: 2px solid var(--color);
+  overflow: hidden;
+}
+
+.dialog::backdrop {
+  opacity: 0.75;
+  background: var(--color);
+}
+
+.dialog__title {
+  display: flex;
+  font-family: var(--font-accent), fantasy;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  inline-size: 234px;
+}
+
+.dialog__container {
+  display: grid;
+  gap: 30px;
+}
+
+.dialog__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 17px;
+}
+
+.dialog__message {
+  display: flex;
+  font-family: var(--font-accent), fantasy;
+  font-size: 14px;
+  line-height: 150%;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+@supports (
+  (text-stroke: 1px var(--page-bg-color)) or
+    (-webkit-text-stroke: 1px var(--page-bg-color))
+) {
+  .card__watermark {
+    -webkit-text-stroke: 1px var(--page-bg-color);
+    text-shadow: none;
+    text-stroke: 1px var(--page-bg-color);
+  }
+}
+
+@supports (mix-blend-mode: difference) {
+  .button .button__text {
+    transition: none;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: var(--hero-subtitle);
+  }
+
+  .title__decor {
+    font-size: var(--hero-title);
+  }
+
+  .save__button {
+    flex-direction: column;
+  }
+} 
