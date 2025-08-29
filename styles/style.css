@@ -160,6 +160,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0;
+  outline: 2px solid transparent;
   transition: outline 0.3s linear;
 }
 
@@ -193,7 +194,8 @@ main {
   cursor: pointer;
   border: 2px solid var(--border-color);
   background: var(--button-text-color);
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.3s linear;
+  box-shadow: 0 0 0 transparent;
 }
 
 .button::before {
@@ -239,9 +241,8 @@ main {
 
 .save__button {
   min-height: 55px;
-  width: 355px;
+  width: 335px;
   gap: 8px;
-  padding: 15px 20px;
 }
 
 .dialog[open] {
@@ -250,11 +251,8 @@ main {
   align-items: center;
   width: calc(100vw * (352 / 1440));
   min-width: 341px;
-  padding: 30px;
-  position: fixed;
-  background-color: var(--page-bg-color);
+  height: 191px;
   border: 2px solid var(--color);
-  overflow: hidden;
 }
 
 .dialog::backdrop {
@@ -276,12 +274,8 @@ main {
 }
 
 .dialog__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   min-height: 38px;
-  padding: 9px 17px;
 }
 
 .dialog__message {
@@ -329,8 +323,6 @@ main {
     flex-direction: column;
     width: 306px;
     height: 84px;
-    gap: 8px;
-    padding: 0px;
   }
   .icon {
     width: 28px;
