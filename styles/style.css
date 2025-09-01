@@ -160,8 +160,8 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0;
-  outline: 2px solid transparent;
-  transition: outline 0.3s linear;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -169,7 +169,7 @@ main {
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--border-color, #000000);
+  border-color: var(--border-color, #000000);
 }
 
 .button:focus {
@@ -194,7 +194,7 @@ main {
   cursor: pointer;
   border: 2px solid var(--border-color);
   background: var(--button-text-color);
-  transition: color 0.5s ease-in-out, box-shadow 0.3s linear;
+  transition: color 0.5s ease-in-out;
   box-shadow: 0 0 0 transparent;
 }
 
@@ -247,10 +247,13 @@ main {
 
 .dialog[open] {
   display: grid;
+}
+.dialog {
   justify-content: center;
   align-items: center;
   width: calc(100vw * (352 / 1440));
   min-width: 341px;
+  max-width: 353px;
   height: 191px;
   border: 2px solid var(--color);
 }
