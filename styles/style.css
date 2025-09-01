@@ -172,14 +172,6 @@ main {
   border-color: var(--border-color, #000000);
 }
 
-.button:focus {
-  outline: none;
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--text-color, #000000);
-}
-
 .card__button {
   display: flex;
   justify-content: end;
@@ -194,8 +186,15 @@ main {
   cursor: pointer;
   border: 2px solid var(--border-color);
   background: var(--button-text-color);
-  transition: color 0.5s ease-in-out;
-  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0px 0px transparent;
+}
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color, #000000);
 }
 
 .button::before {
@@ -317,7 +316,7 @@ main {
 
 @supports (mix-blend-mode: difference) {
   .button {
-    transition: outline 0.3s linear;
+    transition: box-shadow 0.3s ease;
   }
 }
 
